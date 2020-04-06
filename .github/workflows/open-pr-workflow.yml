@@ -1,0 +1,12 @@
+name: Greet Everyone
+on:
+  issue_comment:
+    types: [created]
+
+jobs:
+  build:
+    name: Greeting
+    runs-on: ubuntu-latest
+    steps:
+      - name: notification
+        run: echo 'There is a new comment:  ${{ github.event.comment.body }}.'
